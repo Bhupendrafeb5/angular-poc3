@@ -1,0 +1,14 @@
+<form (submit)="$event.preventDefault()">
+    
+      <label>First name</label>
+      <input matInput (cdkAutofill)="firstNameAutofilled = $event.isAutofilled">
+      <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
+    
+   
+      <label>Last name</label>
+      <input matInput (cdkAutofill)="lastNameAutofilled = $event.isAutofilled">
+      <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+    
+    <button mat-raised-button>Submit</button>
+  </form>
+  
