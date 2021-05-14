@@ -1,0 +1,40 @@
+
+
+
+
+  <div class="row no-gutters">
+  <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10">
+   <div class="leftside">
+     <br>
+   <app-button *ngIf="index===7"></app-button>
+   <app-divider *ngIf="index===8"></app-divider>
+   <app-drop-down *ngIf="index===4"></app-drop-down>
+   <app-footer *ngIf="index===2"></app-footer>
+   <app-header *ngIf="index===0"></app-header>
+   <app-mask *ngIf="index===9"></app-mask>
+   <app-spinner *ngIf="index===5"></app-spinner>
+   <app-table *ngIf="index===1"></app-table>
+   <app-textbox *ngIf="index===6"></app-textbox>
+   <app-time *ngIf="index===3"></app-time>
+   </div>
+  </div>
+  <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2">
+   <div class="rightside">
+     <div>
+       <h3>Drag and Drop list item</h3>
+     </div>
+    <div
+    cdkDropList
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListSortPredicate]="sortPredicate"
+    >
+    <div
+      class="example-box"
+      *ngFor="let component of Components"
+      [cdkDragData]="component"
+      cdkDrag>{{component}}</div>
+  </div>
+   </div>
+  </div>
+ </div>
